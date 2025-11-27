@@ -100,7 +100,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen bg-linear-to-br from-background via-background to-muted/20 p-4 md:p-6 lg:p-8">
       <div className="container mx-auto space-y-6">
         {/* Modern Header */}
         <motion.div 
@@ -109,7 +109,7 @@ export default function DashboardPage() {
           className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8"
         >
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+            <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-rrom-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
               DNS Analytics Dashboard
             </h1>
             <p className="text-muted-foreground text-lg">
@@ -150,7 +150,7 @@ export default function DashboardPage() {
             transition={{ delay: 0.1 }}
           >
             <Card className="relative overflow-hidden border-2 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-blue-500/20 to-transparent rounded-bl-full" />
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Total Lookups</CardTitle>
                 <div className="p-2 rounded-lg bg-blue-500/10">
@@ -174,7 +174,7 @@ export default function DashboardPage() {
             transition={{ delay: 0.2 }}
           >
             <Card className="relative overflow-hidden border-2 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-transparent rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-purple-500/20 to-transparent rounded-bl-full" />
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Avg Latency</CardTitle>
                 <div className="p-2 rounded-lg bg-purple-500/10">
@@ -198,7 +198,7 @@ export default function DashboardPage() {
             transition={{ delay: 0.3 }}
           >
             <Card className="relative overflow-hidden border-2 hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/20 to-transparent rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-green-500/20 to-transparent rounded-bl-full" />
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Cache Hit Rate</CardTitle>
                 <div className="p-2 rounded-lg bg-green-500/10">
@@ -222,7 +222,7 @@ export default function DashboardPage() {
             transition={{ delay: 0.4 }}
           >
             <Card className="relative overflow-hidden border-2 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-transparent rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-orange-500/20 to-transparent rounded-bl-full" />
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Active Resolvers</CardTitle>
                 <div className="p-2 rounded-lg bg-orange-500/10">
@@ -330,7 +330,7 @@ export default function DashboardPage() {
                       cx="50%"
                       cy="50%"
                       labelLine={false}
-                      label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                      label={({ name, percent }: { name?: string; percent?: number }) => `${name ?? ''}: ${((percent ?? 0) * 100).toFixed(0)}%`}
                       outerRadius={100}
                       innerRadius={40}
                       fill="#8884d8"
